@@ -1,15 +1,24 @@
 cmake_minimum_required(VERSION 3.27)
 
-set(PROJECT_NAME cmake_project_example)  # setting variable
+set(PROJECT_NAME Fnl_SolarSystem)  # setting variable
 set(CMAKE_CXX_STANDARD 17)
 
 # For glfw, setting windows
-set(WINDOW_NAME "Hello, OpenGL! Reviewed")
+set(WINDOW_NAME "OpenGL / GLFW Sample -- Minho KIM")
 set(WINDOW_WIDTH 960)
 set(WINDOW_HEIGHT 540)
 
 project(${PROJECT_NAME})
-add_executable(${PROJECT_NAME} src/main.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp
+src/main.cpp
+src/common.cpp src/common.h
+src/shader.cpp src/shader.h
+src/program.cpp src/program.h
+src/context.cpp src/context.h
+src/buffer.cpp src/buffer.h
+src/vertex_layout.cpp src/vertex_layout.h
+src/image.cpp src/image.h
+src/texture.cpp src/texture.h)
 
 include(Dependency.cmake)
 
@@ -20,7 +29,8 @@ target_link_directories(${PROJECT_NAME} PUBLIC ${DEP_LIB_DIR})
 target_link_libraries(${PROJECT_NAME} PUBLIC ${DEP_LIBS})
 
 
-# For glfw, for the macro: It is the same as #define WINDOW_NAME "hello openGL"
+# For glfw, for the macro: It is the same as 
+# #define WINDOW_NAME "hello openGL" IN CPP CODE.
 target_compile_definitions(${PROJECT_NAME} PUBLIC
   WINDOW_NAME="${WINDOW_NAME}"
   WINDOW_WIDTH=${WINDOW_WIDTH}
