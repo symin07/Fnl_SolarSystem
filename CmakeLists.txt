@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 # For glfw, setting windows
 set(WINDOW_NAME "OpenGL / GLFW Sample -- Minho KIM")
-set(WINDOW_WIDTH 960)
-set(WINDOW_HEIGHT 540)
+set(WINDOW_WIDTH 1280)
+set(WINDOW_HEIGHT 720)
 
 project(${PROJECT_NAME})
 add_executable(${PROJECT_NAME} src/main.cpp
@@ -18,7 +18,11 @@ src/context.cpp src/context.h
 src/buffer.cpp src/buffer.h
 src/vertex_layout.cpp src/vertex_layout.h
 src/image.cpp src/image.h
-src/texture.cpp src/texture.h)
+src/texture.cpp src/texture.h
+src/mesh.cpp src/mesh.h
+src/model.cpp src/model.h
+src/framebuffer.cpp src/framebuffer.h
+src/shadow_map.cpp src/shadow_map.cpp)
 include(Dependency.cmake)
 
 

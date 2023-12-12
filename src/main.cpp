@@ -3,9 +3,10 @@
 #include <glad/glad.h>          // Before glfw3.h, if not error 
 #include <GLFW/glfw3.h>
 #include <typeinfo>
-#include "context.h"
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
+
+#include "context.h"
 
 
 void OnFramebufferSizeChange(GLFWwindow* window, int width, int height) { 
@@ -54,6 +55,7 @@ void OnKeyEvent(GLFWwindow* window, int key, int scancode, int action, int mods)
 int main(int argc, const char** argv) 
 { 
     SPDLOG_INFO("Start Program");
+    
     // Itialize glfw library, if fails, it will exit after printing error
     SPDLOG_INFO("Initialize glfw");
      if (!glfwInit()) {
